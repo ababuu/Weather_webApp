@@ -9,17 +9,17 @@ async function getWeather(location){
     console.log(data);
     return data;
 }
-async function getTemp(){
+async function getTemperature(){
     let data= await getWeather('addis ababa');
     const temperature=data.main.temp;
     console.log(temperature);
 }
-// async function getWeather(){}
-// async function getWeather(){}
-// async function getWeather{}
-// async function getWeather{}
-// async function getWeather{}
-// async function getWeather{}
+async function getTempFeelsLike(){
+    let data= await getWeather('addis ababa');
+    const feelsLike=data.main.feels_like;
+    console.log(feelsLike);
+}
 
-getWeather('gonder');
-getTemp();
+
+getTemperature();
+getTempFeelsLike();

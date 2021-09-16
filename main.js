@@ -6,7 +6,7 @@ async function apiCall(){
 async function getWeather(location){
     let response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
     let data=await response.json();
-    console.log(data);
+    //console.log(data);
     return data;
 }
 async function getTemperature(){
@@ -19,7 +19,13 @@ async function getTempFeelsLike(){
     const feelsLike=data.main.feels_like;
     console.log(feelsLike);
 }
+async function getHumidity(){
+    let data= await getWeather('addis ababa');
+    const humidity=data.main.humidity;
+    console.log(humidity);
+}
 
 
 getTemperature();
 getTempFeelsLike();
+getHumidity();

@@ -51,6 +51,11 @@ async function getIcon(){
     img.src=`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     body.appendChild(img);
 }
+async function getName(){
+    let data= await getWeather('addis ababa');
+    const name=data.name;
+    console.log(name);
+}
 
 
 getTemperature();
@@ -61,3 +66,4 @@ getHumidity();
 getPressure();
 getTodayWeather();
 getIcon();
+getName();

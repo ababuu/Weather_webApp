@@ -11,6 +11,7 @@ async function getWeather(location){
 }
 async function getTemperature(){
     let data= await getWeather('addis ababa');
+    console.log(data);
     const temperature=data.main.temp;
     console.log(temperature);
 }
@@ -24,8 +25,14 @@ async function getHumidity(){
     const humidity=data.main.humidity;
     console.log(humidity);
 }
+async function getPressure(){
+    let data= await getWeather('addis ababa');
+    const pressure=data.main.pressure;
+    console.log(pressure);
+}
 
 
 getTemperature();
 getTempFeelsLike();
 getHumidity();
+getPressure();

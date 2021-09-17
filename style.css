@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+body{
+    background: linear-gradient(to right top,#6590df,#6c83eb);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+nav{
+    min-height: 7vh;
+    width: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.1),rgba(255,255,255,.2));
+    position: relative;
+}
+button{
+    border: 0px;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.5),rgba(255,255,255,.5));
+    width: 2%;
+    cursor: pointer;
+    border: solid white .1px;
+}
+.F-btn{
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    border-radius: 0 5px 5px 0;
+    border-left: 0;
+}
+.C-btn{
+    position: absolute;
+    top: 10px;
+    right: 207px;
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+}
+.city-name{
+    position: absolute;
+    top: 10px;
+    left: 207px;
+}
+button:hover{
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,.8));
+    color: gray;
+}
+.selected{
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.8),rgba(255,255,255,.95));
+    color: gray;
+}
+
+.container{
+    background: white;
+    min-height: 50vh;
+    width: 60%;
+    position: absolute;
+    top: 70px;
+    border-radius: 5px;
+    background: linear-gradient(to left, rgba(255,255,255,0.2),rgba(255,255,255,.1));
+}
+
+input{
+    background: linear-gradient(to right, rgba(255,255,255,0.4),rgba(255,255,255,.2));
+    border: 0px;
+    width: 20%;
+    min-height: 5vh;
+    position: absolute;
+    top: 7px;
+    left: 180px;
+    border-radius: 20px;
+    padding-left: 25px;
+}
+input:focus{
+    border: solid white .1px;
+    border-radius: 20px;
+    outline: none;
+}
+.inner-container{
+    position: relative;
+    min-height: 50vh;
+    width: 60%;
+}
+.temp{
+    font-size: 60px;
+    display: inline;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+}
+
+.icon{
+    position: absolute;
+    top: 60px;
+    left: 5px;
+}
+.detail{
+    position: absolute;
+    top: 90px;
+    left: 220px;
+    font-size: 40px;
+}
+.feels-like{
+    position: absolute;
+    top: 140px;
+    left: 60px;
+}
+.title{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.max{
+    position: absolute;
+    bottom: 50px;
+    left:50px
+}
+.min{
+    position: absolute;
+    bottom: 50px;
+    left:240px;
+}
+.wind{
+    position: absolute;
+    bottom: 50px;
+    left:420px
+}
+.humidity{
+    position: absolute;
+    bottom: 50px;
+    left:530px
+}
+.pressure{
+    position: absolute;
+    bottom: 50px;
+    left:640px
+}
+@media (max-width:1200px){
+    .container{
+        width: 70%;
+    }
+}
+
+@media (max-width:680px) {
+    .container{
+        min-height: 100vh;
+        width: 90%;
+        top: 20px;
+    }
+    .inner-container{
+        min-height: 100vh;
+        width: 80%;
+        /* display: flex;
+        /* justify-content: center;
+        align-items: center; */
+        /* flex-direction: column;  */
+    }
+    .detail{
+        right: 70%;
+    }
+    .max{
+        top: 250px;
+        left:20%;
+        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
+        border-radius: 5px;
+        height: 14vh;
+        width: 200px;
+        padding: 30px;
+    }
+    .min{
+        top: 350px;
+        left:20%;
+        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
+        border-radius: 5px;
+        height: 20vh;
+        /* width: 200px; */
+        padding: 30px;
+    }
+    .wind{
+        position: absolute;
+        bottom: 50px;
+        left:420px
+    }
+    .humidity{
+        position: absolute;
+        bottom: 50px;
+        left:530px
+    }
+    .pressure{
+        position: absolute;
+        bottom: 50px;
+        left:640px
+    }
+    h2{
+        font-size: 20px !important;
+    }
+}

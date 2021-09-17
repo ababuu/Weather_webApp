@@ -11,6 +11,8 @@ const wind=document.querySelector('.wind-value');
 const humidity=document.querySelector('.humidity-value');
 const pressure=document.querySelector('.pressure-value');
 const description=document.querySelector('.description');
+const sunrise=document.querySelector('.sunrise-time');
+const sunset=document.querySelector('.sunset-time');
 //event listeners for the buttons
 cel.addEventListener('click',()=>{
     faran.classList.remove('selected');
@@ -24,16 +26,23 @@ faran.addEventListener('click',()=>{
 (async function() {
 	cityName.textContent=await getName();
     icon.src=await getIcon();
-    temp.textContent=await getTemperature();
+    let tempValue=await getTemperature()
+    temp.textContent=`${tempValue}°`;
     let feelsLikeText=await getTempFeelsLike();
-    feelsLike.textContent=  `Feels Like ${feelsLikeText}`;
+    feelsLike.textContent=  `Feels Like ${feelsLikeText}°`;
     detail.textContent=await getTodayWeather();
     description.textContent=await getDescription();
-    maxTemp.textContent=await getMaxTemp();
-    minTemp.textContent=await getMinTemp();
+    let maxTempValue=await getMaxTemp();
+    maxTemp.textContent=`${maxTempValue}°`;
+    let minTempValue=await getMinTemp();
+    minTemp.textContent=`${minTempValue}°`;
     wind.textContent=await getWind();
     humidity.textContent=await getHumidity();
     pressure.textContent=await getPressure();
+    let sunriseTime=await getSunrise();
+    sunrise.textContent=`${sunriseTime}Am`
+    let sunsetTime=await getSunset();
+    sunset.textContent=`${sunsetTime}Pm`
 })();
 
 async function apiCall(){
@@ -107,9 +116,11 @@ async function getIcon(){
 }
 async function getName(){
     let data= await getWeather('addis ababa');
-    const name=data.name;
-    console.log(name);
-    return name;
+    const cityName=data.name;
+    const countryName=data.sys.country;
+    console.log(cityName);
+    console.log(countryName);
+    return cityName+', '+countryName;
 }
 async function getSunrise(){
     let data= await getWeather('addis ababa');

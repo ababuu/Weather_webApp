@@ -5,12 +5,12 @@ const icon=document.querySelector('.icon');
 const temp=document.querySelector('.temp');
 const feelsLike=document.querySelector('.feels-like');
 const detail=document.querySelector('.detail');
-const maxTemp=document.querySelector('.max');
-const minTemp=document.querySelector('.min');
-const wind=document.querySelector('.wind');
-const humidity=document.querySelector('.humidity');
-const pressure=document.querySelector('.pressure');
-
+const maxTemp=document.querySelector('.max-value');
+const minTemp=document.querySelector('.min-value');
+const wind=document.querySelector('.wind-value');
+const humidity=document.querySelector('.humidity-value');
+const pressure=document.querySelector('.pressure-value');
+const description=document.querySelector('.description');
 //event listeners for the buttons
 cel.addEventListener('click',()=>{
     faran.classList.remove('selected');
@@ -28,6 +28,13 @@ faran.addEventListener('click',()=>{
     let feelsLikeText=await getTempFeelsLike();
     feelsLike.textContent=  `Feels Like ${feelsLikeText}`;
     detail.textContent=await getTodayWeather();
+    description.textContent=await getDescription();
+    maxTemp.textContent=await getMaxTemp();
+    minTemp.textContent=await getMinTemp();
+    wind.textContent=await getWind();
+    humidity.textContent=await getHumidity();
+    pressure.textContent=await getPressure();
+
 })();
 
 async function apiCall(){
@@ -37,7 +44,6 @@ async function apiCall(){
 async function getWeather(location){
     let response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
     let data=await response.json();
-    //console.log(data);
     return data;
 }
 async function getTemperature(){
@@ -65,6 +71,12 @@ async function getMinTemp(){
     console.log(minTemp);
     return minTemp;
 }
+async function getWind(){
+    let data= await getWeather('addis ababa');
+    const wind=data.wind.speed;
+    console.log(wind);
+    return wind;
+}
 async function getHumidity(){
     let data= await getWeather('addis ababa');
     const humidity=data.main.humidity;
@@ -78,10 +90,16 @@ async function getPressure(){
     return pressure;
 }
 async function getTodayWeather(){
-    let data= await getWeather('addis ababa');
+    let data= await getWeather('hawassa');
     const weather=data.weather[0].main;
     console.log(weather);
     return weather;
+}
+async function getDescription(){
+    let data= await getWeather('hawassa');
+    const desc=data.weather[0].description;
+    console.log(desc);
+    return desc;
 }
 async function getIcon(){
     let data= await getWeather('addis ababa');
@@ -116,13 +134,3 @@ async function getSunset(){
 }
 
 getTemperature();
-getTempFeelsLike();
-getMaxTemp();
-getMinTemp();
-getHumidity();
-getPressure();
-getTodayWeather();
-getIcon();
-getName();
-getSunrise();
-getSunset();

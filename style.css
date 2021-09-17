@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -105,27 +105,39 @@ input:focus{
 .detail{
     position: absolute;
     top: 84px;
-    left: 270px;
+    left: 290px;
     font-size: 40px;
 }
 .description{
     position: absolute;
     top: 140px;
-    left: 280px;
+    left: 293px;
 }
 .feels-like{
     position: absolute;
     top: 140px;
-    left: 60px;
+    left: 80px;
 }
 .title{
     position: absolute;
     top: 10px;
     left: 10px;
 }
+.max,
+.wind,
+.humidity,
+.min,
+.pressure{
+    font-weight: 200;
+}
 .max{
     position: absolute;
     bottom: 50px;
+    left:50px
+}
+.max-value{
+    position: absolute;
+    bottom: 20px;
     left:50px
 }
 .min{
@@ -133,9 +145,19 @@ input:focus{
     bottom: 50px;
     left:240px;
 }
+.min-value{
+    position: absolute;
+    bottom: 20px;
+    left:240px;
+}
 .wind{
     position: absolute;
     bottom: 50px;
+    left:420px
+}
+.wind-value{
+    position: absolute;
+    bottom: 20px;
     left:420px
 }
 .humidity{
@@ -143,9 +165,19 @@ input:focus{
     bottom: 50px;
     left:530px
 }
+.humidity-value{
+    position: absolute;
+    bottom: 20px;
+    left:530px
+}
 .pressure{
     position: absolute;
     bottom: 50px;
+    left:640px
+}
+.pressure-value{
+    position: absolute;
+    bottom: 20px;
     left:640px
 }
 @media (max-width:1200px){
@@ -163,10 +195,6 @@ input:focus{
     .inner-container{
         min-height: 100vh;
         width: 80%;
-        /* display: flex;
-        /* justify-content: center;
-        align-items: center; */
-        /* flex-direction: column;  */
     }
     .detail{
         right: 70%;

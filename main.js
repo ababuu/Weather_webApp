@@ -34,7 +34,6 @@ faran.addEventListener('click',()=>{
     wind.textContent=await getWind();
     humidity.textContent=await getHumidity();
     pressure.textContent=await getPressure();
-
 })();
 
 async function apiCall(){

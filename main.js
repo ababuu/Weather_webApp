@@ -89,13 +89,13 @@ async function getPressure(){
     return pressure;
 }
 async function getTodayWeather(){
-    let data= await getWeather('hawassa');
+    let data= await getWeather('addis ababa');
     const weather=data.weather[0].main;
     console.log(weather);
     return weather;
 }
 async function getDescription(){
-    let data= await getWeather('hawassa');
+    let data= await getWeather('addis ababa');
     const desc=data.weather[0].description;
     console.log(desc);
     return desc;

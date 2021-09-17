@@ -104,9 +104,14 @@ input:focus{
 }
 .detail{
     position: absolute;
-    top: 90px;
-    left: 220px;
+    top: 84px;
+    left: 270px;
     font-size: 40px;
+}
+.description{
+    position: absolute;
+    top: 140px;
+    left: 280px;
 }
 .feels-like{
     position: absolute;

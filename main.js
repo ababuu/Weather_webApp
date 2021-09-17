@@ -1,4 +1,35 @@
-const body=document.querySelector('body');
+const faran=document.querySelector('.F-btn');
+const cel=document.querySelector('.C-btn');
+const cityName=document.querySelector('.city-name');
+const icon=document.querySelector('.icon');
+const temp=document.querySelector('.temp');
+const feelsLike=document.querySelector('.feels-like');
+const detail=document.querySelector('.detail');
+const maxTemp=document.querySelector('.max');
+const minTemp=document.querySelector('.min');
+const wind=document.querySelector('.wind');
+const humidity=document.querySelector('.humidity');
+const pressure=document.querySelector('.pressure');
+
+//event listeners for the buttons
+cel.addEventListener('click',()=>{
+    faran.classList.remove('selected');
+    cel.classList.add('selected');
+})
+faran.addEventListener('click',()=>{
+    cel.classList.remove('selected');
+    faran.classList.add('selected');
+});
+
+(async function() {
+	cityName.textContent=await getName();
+    icon.src=await getIcon();
+    temp.textContent=await getTemperature();
+    let feelsLikeText=await getTempFeelsLike();
+    feelsLike.textContent=  `Feels Like ${feelsLikeText}`;
+    detail.textContent=await getTodayWeather();
+})();
+
 async function apiCall(){
     let response= await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=cc6eab723af7048e058f86b0e00298e2',{mode: 'cors'});
     console.log(response.json());
@@ -54,7 +85,7 @@ async function getTodayWeather(){
 }
 async function getIcon(){
     let data= await getWeather('addis ababa');
-    const icon=`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    const icon=`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     return icon;
 }
 async function getName(){

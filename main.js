@@ -16,9 +16,10 @@ const sunset=document.querySelector('.sunset-time');
 const search=document.querySelector('.search');
 const searchBtn=document.querySelector('.search-btn');
 const container=document.querySelector('.container');
+const spinner = document.getElementById("spinner1");
 let loc;
 let unit;
-container.setAttribute('display', 'none');
+
 //event listeners for the buttons
 
 cel.addEventListener('click',async()=>{
@@ -110,10 +111,12 @@ async function getWeather(location,unit){
     return data;
 }
 async function getTemperature(){
+    spinner.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     console.log(data);
     const temperature=data.main.temp;
     console.log(temperature);
+    spinner.setAttribute('hidden', '');
     return temperature
 }
 async function getTempFeelsLike(){

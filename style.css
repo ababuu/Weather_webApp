@@ -118,6 +118,29 @@ input:focus{
     top: 140px;
     left: 80px;
 }
+.sunrise{
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+.sunrise-icon{
+    width:50px;
+    position: absolute;
+    top: 85px;
+    left: 550px;
+}
+
+.sunset{
+    position: absolute;
+    top: 100px;
+    left: 650px;
+}
+.sunset-icon{
+    width:50px;
+    position: absolute;
+    top: 85px;
+    left: 700px;
+}
 .title{
     position: absolute;
     top: 10px;
@@ -127,7 +150,9 @@ input:focus{
 .wind,
 .humidity,
 .min,
-.pressure{
+.pressure,
+.sunrise,
+.sunset{
     font-weight: 200;
 }
 .max{

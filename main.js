@@ -200,6 +200,7 @@ async function getSunrise(){
     return formattedTime;
 }
 async function getSunset(){
+    spinner4.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     let sunrise = data.sys.sunset;
     let date = new Date(sunrise * 1000);
@@ -207,6 +208,7 @@ async function getSunset(){
     let minutes = "0" + date.getMinutes();
     let formattedTime = hours + ':' + minutes.substr(-2);
     console.log(formattedTime);
+    spinner4.setAttribute('hidden', '');
     return formattedTime;
 }
 

@@ -16,6 +16,7 @@ const sunset=document.querySelector('.sunset-time');
 const search=document.querySelector('.search');
 const searchBtn=document.querySelector('.search-btn');
 const container=document.querySelector('.container');
+const nav=document.querySelector('nav');
 const spinner = document.getElementById("spinner1");
 const spinner2 = document.getElementById("spinner2");
 const spinner3 = document.getElementById("spinner3");
@@ -74,8 +75,8 @@ async function assignValue() {
     maxTemp.textContent=`${maxTempValue}°F`;
     let minTempValue=await getMinTemp();
     minTemp.textContent=`${minTempValue}°F`;
-    let windtext=await getWind()
-    wind.textContent=`${windtext}m/se`;
+    let windText=await getWind()
+    wind.textContent=`${windText}m/se`;
     let humidityText=await getHumidity();
     humidity.textContent=`${humidityText}g/mᶟ`;
     let pressureText=await getPressure()
@@ -95,31 +96,46 @@ async function apiCall(){
     console.log(response.json());
 }
 async function getWeather(location,unit){
-    let response;
-    let data;
-    if(unit=='metric'){
-        if(location){
-            response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&units=metric&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
-            data=await response.json();
+    
+    try{
+        let response;
+        let data;
+        if(unit=='metric'){
+            if(location){
+                response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
+                data=await response.json();
+            }
+            else{
+                response= await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=cc6eab723af7048e058f86b0e00298e2',{mode: 'cors'});
+                data=await response.json();
+            }
         }
         else{
-            response= await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=cc6eab723af7048e058f86b0e00298e2',{mode: 'cors'});
-            data=await response.json();
+            if(location){
+                response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
+                data=await response.json();
+            }
+            else{
+                response= await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=imperial&APPID=cc6eab723af7048e058f86b0e00298e2',{mode: 'cors'});
+                data=await response.json();
+            }
         }
+        return data;
     }
-    else{
-        if(location){
-            response= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${loc}&units=imperial&APPID=cc6eab723af7048e058f86b0e00298e2`,{mode: 'cors'});
-            data=await response.json();
-        }
-        else{
-            response= await fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=imperial&APPID=cc6eab723af7048e058f86b0e00298e2',{mode: 'cors'});
-            data=await response.json();
-        }
+    catch(error){
+        
+            alert("error");
+        
+        
     }
     
-    
-    return data;
+}
+window.onunhandledrejection=function(err){
+    const errorMessage=document.createElement('p');
+    errorMessage.classList.add('error-message');
+    errorMessage.textContent="An error occurred! Try again";
+    nav.appendChild(errorMessage);
+
 }
 async function getTemperature(){
     spinner.removeAttribute('hidden');
@@ -228,9 +244,6 @@ async function getSunset(){
     return formattedTime;
 }
 
-getTemperature();
-
 window.onload= function(){
     faran.classList.add('selected');
-
 }

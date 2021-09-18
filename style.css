@@ -18,7 +18,7 @@ main{
     position: relative;
 }
 nav{
-    min-height: 7vh;
+    min-height: 9vh;
     width: 100%;
     background: linear-gradient(to left, rgba(255, 255, 255, 0.1),rgba(255,255,255,.2));
     position: relative;
@@ -241,6 +241,13 @@ input:focus{
     position: absolute;
     bottom: 20px;
     left:640px
+}
+.error-message{
+    color: rgb(255, 92, 92);
+    position: absolute;
+    left: 190px;
+    top:37px;
+    font-size: 15px;
 }
 #spinner1:not([hidden]) {
     position: absolute;
@@ -698,5 +705,34 @@ input:focus{
         position: fixed;
         left: 66%;
         width: 4vw;
+    }
+    .error-message{
+        left: 90px;
+    }
+    #spinner5:not([hidden]){
+        top: 280px;
+        left: 130px;
+    }
+    #spinner6:not([hidden]){
+        top: 400px;
+        left: 130px;
+    }
+    #spinner7:not([hidden]){
+        top: 490px;
+        left: 130px;
+    }
+    #spinner8:not([hidden]){
+        top: 550px;
+        left: 130px;
+    }
+    #spinner9:not([hidden]){
+        top: 650px;
+        left: 130px;
+    }
+    #spinner3:not([hidden]){
+        display: none;
+    }
+    #spinner4:not([hidden]){
+        display: none;
     }
 }

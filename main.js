@@ -161,9 +161,11 @@ async function getWind(){
     return wind;
 }
 async function getHumidity(){
+    spinner8.removeAttribute('hidden');
     let data= await getWeather(loc,'metric');
     const humidity=data.main.humidity;
     console.log(humidity);
+    spinner8.setAttribute('hidden', '');
     return humidity;
 }
 async function getPressure(){

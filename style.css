@@ -169,10 +169,12 @@ input:focus{
 .humidity,
 .min,
 .pressure,
-.title,
 .city-name
 {
     font-weight: 200;
+    font-size: 2vw;
+}
+.title{
     font-size: 2vw;
 }
 .max-value,
@@ -443,106 +445,258 @@ input:focus{
     .container{
         width: 70%;
     }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
+    }
 }
 @media (max-width:1075px){
     .container{
         width: 75%;
+    }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
     }
 }
 @media (max-width:1005px){
     .container{
         width: 80%;
     }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
+    }
 }
 @media (max-width:940px){
     .container{
         width: 85%;
+    }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
     }
 }
 @media (max-width:880px){
     .container{
         width: 90%;
     }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
+    }
 }
 @media (max-width:830px){
     .container{
         width: 95%;
+    }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
     }
 }
 @media (max-width: 780px) and (min-width: 750px){
     .container{
         width: 100%;
     }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 3vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 67%;
+        width: 3vw;
+    }
 }
 
 @media (max-width:749px) {
     .container{
-        min-height: 100vh;
-        width: 90%;
+        min-height:680px;
+        width: 95%;
+        margin: auto;
         top: 20px;
     }
-    .inner-container{
-        min-height: 100vh;
-        width: 80%;
+    nav{
+        width: 100%;
     }
-    .detail{
-        right: 70%;
+    .inner-container{
+        width: 100%;
     }
     .max,
-.wind,
-.humidity,
-.min,
-.pressure,
-.title,
-.city-name
-{
-    font-weight: 200;
-    font-size: 3vw;
-}
-.max-value,
-.min-value,
-.humidity-value,
-.pressure-value,
-.wind-value{
-    font-size: 4.5vh;
-}
-.sunrise-time,
-.sunset-time,
-.feels-like,
-.description{
-    font-weight: 200;
-    font-size: 2.5vw;
-}
+    .wind,
+    .humidity,
+    .min,
+    .pressure,
+    .city-name
+    {
+        font-weight: 200;
+        font-size: 27px;
+    }
+    .title{
+        font-size: 30px;
+        left: 30px;
+    }
+    .max-value,
+    .min-value,
+    .humidity-value,
+    .pressure-value,
+    .wind-value{
+        font-size: 25px;
+    }
+    .sunrise-time,
+    .sunset-time,
+    .feels-like,
+    .description{
+        font-weight: 200;
+        font-size:15px;
+    }
+    .temp{
+        top: 87px;
+        font-size: 40px;
+    }
+    .feels-like{
+        top: 150px;
+        left: 90px
+    }
+    .icon{
+        top:65px;
+    }
+    .detail{
+        top:85px;
+        left:260px;
+        font-size: 5vw;
+    }
+    .description{
+        top:120px;
+        left:260px;
+        font-size: 4vw;
+    }
+
+    .city-name{
+        top: 45px;
+        left: 30px;
+    }
+    .sunrise{
+        top:180px;
+        left: 50px;
+    }
+    .sunrise-icon{
+        width: 30px;
+        top: 180px;
+        left: 100px;
+    }
+    .sunrise-time{
+        top: 200px;
+        left: 60px;
+    }
+    .sunset{
+        top: 180px;
+        left:160px;
+    }
+    .sunset-icon{
+        width: 30px;
+        top: 180px;
+        left: 210px;
+    }
+    .sunset-time{
+        top: 200px;
+        left: 167px;
+    }
     .max{
         top: 250px;
         left:20%;
-        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
-        border-radius: 5px;
-        height: 14vh;
-        width: 200px;
-        padding: 30px;
+        
+    }
+    .max-value{
+        top: 280px;
+        left: 20%;
     }
     .min{
-        top: 350px;
+        top: 340px;
         left:20%;
-        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
-        border-radius: 5px;
-        height: 20vh;
-        padding: 30px;
+    }
+    .min-value{
+        top:370px;
+        left: 20%;
     }
     .wind{
-        position: absolute;
-        bottom: 50px;
-        left:420px
+        top: 420px;
+        left:20%;
+    }
+    .wind-value{
+        top: 445px;
+        left: 20%;
     }
     .humidity{
-        position: absolute;
-        bottom: 50px;
-        left:530px
+        top: 500px;
+        left:20%;
+    }
+    .humidity-value{
+        top: 530px;
+        left: 20%;
     }
     .pressure{
-        position: absolute;
-        bottom: 50px;
-        left:640px
+        top: 590px;
+        left:20%
+    }
+    .pressure-value{
+        top: 620px;
+        left: 20%;
+    }
+    input{
+        width: 40%;
+        left: 10%;
+    }
+    .search-btn{
+        left: 53%;
+        width: 35px;
+    }
+    .F-btn{
+        position: fixed;
+        left: 70%;
+        width: 4vw;
+    }
+    .C-btn{
+        position: fixed;
+        left: 66%;
+        width: 4vw;
     }
 }

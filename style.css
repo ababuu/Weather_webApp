@@ -303,6 +303,48 @@ input:focus{
     will-change: transform;
     animation: spin 1s infinite linear
 }
+#spinner2:not([hidden]) {
+    position: absolute;
+    top: -60px;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+#spinner2::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #ffffff;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
+#spinner3:not([hidden]) {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: -545px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner3::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #ffffff;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
 
 @keyframes spin {
     from {

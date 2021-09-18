@@ -17,6 +17,8 @@ const search=document.querySelector('.search');
 const searchBtn=document.querySelector('.search-btn');
 const container=document.querySelector('.container');
 const spinner = document.getElementById("spinner1");
+const spinner2 = document.getElementById("spinner2");
+const spinner3 = document.getElementById("spinner3");
 let loc;
 let unit;
 
@@ -66,9 +68,12 @@ async function assignValue() {
     maxTemp.textContent=`${maxTempValue}°F`;
     let minTempValue=await getMinTemp();
     minTemp.textContent=`${minTempValue}°F`;
-    wind.textContent=await getWind();
-    humidity.textContent=await getHumidity();
-    pressure.textContent=await getPressure();
+    let windtext=await getWind()
+    wind.textContent=`${windtext}m/se`;
+    let humidityText=await getHumidity();
+    humidity.textContent=`${humidityText}g/mᶟ`;
+    let pressureText=await getPressure()
+    pressure.textContent=`${pressureText}Pa`
     let sunriseTime=await getSunrise();
     sunrise.textContent=`${sunriseTime}Am`;
     let sunsetTime=await getSunset();
@@ -138,27 +143,29 @@ async function getMinTemp(){
     return minTemp;
 }
 async function getWind(){
-    let data= await getWeather(loc,unit);
+    let data= await getWeather(loc,'metric');
     const wind=data.wind.speed;
     console.log(wind);
     return wind;
 }
 async function getHumidity(){
-    let data= await getWeather(loc,unit);
+    let data= await getWeather(loc,'metric');
     const humidity=data.main.humidity;
     console.log(humidity);
     return humidity;
 }
 async function getPressure(){
-    let data= await getWeather(loc,unit);
+    let data= await getWeather(loc,'metric');
     const pressure=data.main.pressure;
     console.log(pressure);
     return pressure;
 }
 async function getTodayWeather(){
+    spinner2.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     const weather=data.weather[0].main;
     console.log(weather);
+    spinner2.setAttribute('hidden', '');
     return weather;
 }
 async function getDescription(){
@@ -181,6 +188,7 @@ async function getName(){
     return cityName+', '+countryName;
 }
 async function getSunrise(){
+    spinner3.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     let sunrise = data.sys.sunrise;
     let date = new Date(sunrise * 1000);
@@ -188,6 +196,7 @@ async function getSunrise(){
     let minutes = "0" + date.getMinutes();
     let formattedTime = hours + ':' + minutes.substr(-2);
     console.log(formattedTime);
+    spinner3.setAttribute('hidden', '');
     return formattedTime;
 }
 async function getSunset(){

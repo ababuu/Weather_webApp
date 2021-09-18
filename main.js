@@ -19,6 +19,9 @@ const container=document.querySelector('.container');
 const spinner = document.getElementById("spinner1");
 const spinner2 = document.getElementById("spinner2");
 const spinner3 = document.getElementById("spinner3");
+const spinner4 = document.getElementById("spinner4");
+const spinner5 = document.getElementById("spinner5");
+
 let loc;
 let unit;
 
@@ -130,10 +133,12 @@ async function getTempFeelsLike(){
     console.log(feelsLike);
     return feelsLike;
 }
-async function getMaxTemp(){
+async function getMaxTemp(){ 
+    spinner5.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     const maxTemp=data.main.temp_max;
     console.log(maxTemp);
+    spinner5.setAttribute('hidden', '');
     return maxTemp;
 }
 async function getMinTemp(){

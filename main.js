@@ -21,6 +21,9 @@ const spinner2 = document.getElementById("spinner2");
 const spinner3 = document.getElementById("spinner3");
 const spinner4 = document.getElementById("spinner4");
 const spinner5 = document.getElementById("spinner5");
+const spinner6 = document.getElementById("spinner6");
+const spinner7 = document.getElementById("spinner7");
+const spinner8 = document.getElementById("spinner8");
 
 let loc;
 let unit;
@@ -150,9 +153,11 @@ async function getMinTemp(){
     return minTemp;
 }
 async function getWind(){
+    spinner7.removeAttribute('hidden');
     let data= await getWeather(loc,'metric');
     const wind=data.wind.speed;
     console.log(wind);
+    spinner7.setAttribute('hidden', '');
     return wind;
 }
 async function getHumidity(){

@@ -172,24 +172,24 @@ input:focus{
 .city-name
 {
     font-weight: 200;
-    font-size: 2vw;
+    font-size: 25px;
 }
 .title{
-    font-size: 2vw;
+    font-size: 26px;
 }
 .max-value,
 .min-value,
 .humidity-value,
 .pressure-value,
 .wind-value{
-    font-size: 3.5vh;
+    font-size: 20px;
 }
 .sunrise-time,
 .sunset-time,
 .feels-like,
 .description{
     font-weight: 200;
-    font-size: 1.5vw;
+    font-size: 20px;
 }
 
 .max{

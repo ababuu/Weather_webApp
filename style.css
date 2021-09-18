@@ -488,6 +488,31 @@ input:focus{
     .detail{
         right: 70%;
     }
+    .max,
+.wind,
+.humidity,
+.min,
+.pressure,
+.title,
+.city-name
+{
+    font-weight: 200;
+    font-size: 3vw;
+}
+.max-value,
+.min-value,
+.humidity-value,
+.pressure-value,
+.wind-value{
+    font-size: 4.5vh;
+}
+.sunrise-time,
+.sunset-time,
+.feels-like,
+.description{
+    font-weight: 200;
+    font-size: 2.5vw;
+}
     .max{
         top: 250px;
         left:20%;
@@ -503,7 +528,6 @@ input:focus{
         background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
         border-radius: 5px;
         height: 20vh;
-        /* width: 200px; */
         padding: 30px;
     }
     .wind{
@@ -521,8 +545,4 @@ input:focus{
         bottom: 50px;
         left:640px
     }
-    h2{
-        font-size: 20px !important;
-    }
 }
-/* for the spinner */

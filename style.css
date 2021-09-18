@@ -554,7 +554,7 @@ input:focus{
     }
 }
 
-@media (max-width:749px) {
+@media (max-width:749px) and (max-height:600px) {
     .container{
         min-height:680px;
         width: 95%;
@@ -734,5 +734,10 @@ input:focus{
     }
     #spinner4:not([hidden]){
         display: none;
+    }
+}
+@media (max-height:600px) {
+    .container{
+        
     }
 }

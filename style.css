@@ -99,7 +99,7 @@ input:focus{
     width: 60%;
 }
 .temp{
-    font-size: 60px;
+    font-size: 4vw;
     display: inline;
     position: absolute;
     top: 60px;
@@ -115,7 +115,7 @@ input:focus{
     position: absolute;
     top: 84px;
     left: 290px;
-    font-size: 40px;
+    font-size: 3vw;
 }
 .description{
     position: absolute;
@@ -168,13 +168,26 @@ input:focus{
 .wind,
 .humidity,
 .min,
-.pressure,
+.pressure
+{
+    font-weight: 200;
+    font-size: 2vw;
+}
+.max-value,
+.min-value,
+.humidity-value,
+.pressure-value,
+.wind-value{
+    font-size: 3.5vh;
+}
 .sunrise-time,
 .sunset-time,
-.description,
-.feels-like{
+.feels-like,
+.description{
     font-weight: 200;
+    font-size: 1.5vw;
 }
+
 .max{
     position: absolute;
     bottom: 50px;
@@ -225,63 +238,6 @@ input:focus{
     bottom: 20px;
     left:640px
 }
-@media (max-width:1200px){
-    .container{
-        width: 70%;
-    }
-}
-
-@media (max-width:680px) {
-    .container{
-        min-height: 100vh;
-        width: 90%;
-        top: 20px;
-    }
-    .inner-container{
-        min-height: 100vh;
-        width: 80%;
-    }
-    .detail{
-        right: 70%;
-    }
-    .max{
-        top: 250px;
-        left:20%;
-        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
-        border-radius: 5px;
-        height: 14vh;
-        width: 200px;
-        padding: 30px;
-    }
-    .min{
-        top: 350px;
-        left:20%;
-        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
-        border-radius: 5px;
-        height: 20vh;
-        /* width: 200px; */
-        padding: 30px;
-    }
-    .wind{
-        position: absolute;
-        bottom: 50px;
-        left:420px
-    }
-    .humidity{
-        position: absolute;
-        bottom: 50px;
-        left:530px
-    }
-    .pressure{
-        position: absolute;
-        bottom: 50px;
-        left:640px
-    }
-    h2{
-        font-size: 20px !important;
-    }
-}
-/* for the spinner */
 #spinner1:not([hidden]) {
     position: absolute;
     top: -60px;
@@ -480,3 +436,64 @@ input:focus{
         transform: rotate(360deg);
     }
 }
+
+@media (max-width:1250px){
+    .container{
+        width: 70%;
+    }
+    img{
+        width: 40px;
+    }
+}
+
+@media (max-width:680px) {
+    .container{
+        min-height: 100vh;
+        width: 90%;
+        top: 20px;
+    }
+    .inner-container{
+        min-height: 100vh;
+        width: 80%;
+    }
+    .detail{
+        right: 70%;
+    }
+    .max{
+        top: 250px;
+        left:20%;
+        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
+        border-radius: 5px;
+        height: 14vh;
+        width: 200px;
+        padding: 30px;
+    }
+    .min{
+        top: 350px;
+        left:20%;
+        background: linear-gradient(to right, rgba(255,255,255,0.3),rgba(255,255,255,.01));
+        border-radius: 5px;
+        height: 20vh;
+        /* width: 200px; */
+        padding: 30px;
+    }
+    .wind{
+        position: absolute;
+        bottom: 50px;
+        left:420px
+    }
+    .humidity{
+        position: absolute;
+        bottom: 50px;
+        left:530px
+    }
+    .pressure{
+        position: absolute;
+        bottom: 50px;
+        left:640px
+    }
+    h2{
+        font-size: 20px !important;
+    }
+}
+/* for the spinner */

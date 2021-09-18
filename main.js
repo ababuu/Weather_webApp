@@ -24,7 +24,7 @@ const spinner5 = document.getElementById("spinner5");
 const spinner6 = document.getElementById("spinner6");
 const spinner7 = document.getElementById("spinner7");
 const spinner8 = document.getElementById("spinner8");
-
+const spinner9 = document.getElementById("spinner9");
 let loc;
 let unit;
 
@@ -169,9 +169,11 @@ async function getHumidity(){
     return humidity;
 }
 async function getPressure(){
+    spinner9.removeAttribute('hidden');
     let data= await getWeather(loc,'metric');
     const pressure=data.main.pressure;
     console.log(pressure);
+    spinner9.setAttribute('hidden', '');
     return pressure;
 }
 async function getTodayWeather(){

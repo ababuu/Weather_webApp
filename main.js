@@ -142,9 +142,11 @@ async function getMaxTemp(){
     return maxTemp;
 }
 async function getMinTemp(){
+    spinner6.removeAttribute('hidden');
     let data= await getWeather(loc,unit);
     const minTemp=data.main.temp_min;
     console.log(minTemp);
+    spinner6.setAttribute('hidden', '');
     return minTemp;
 }
 async function getWind(){

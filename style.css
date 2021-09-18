@@ -133,7 +133,7 @@ input:focus{
     left: 500px;
 }
 .sunrise-icon{
-    width:50px;
+    width:5vw;
     position: absolute;
     top: 85px;
     left: 550px;
@@ -149,7 +149,7 @@ input:focus{
     left: 650px;
 }
 .sunset-icon{
-    width:50px;
+    width:5vw;
     position: absolute;
     top: 85px;
     left: 700px;
@@ -168,7 +168,9 @@ input:focus{
 .wind,
 .humidity,
 .min,
-.pressure
+.pressure,
+.title,
+.city-name
 {
     font-weight: 200;
     font-size: 2vw;
@@ -441,12 +443,39 @@ input:focus{
     .container{
         width: 70%;
     }
-    img{
-        width: 40px;
+}
+@media (max-width:1075px){
+    .container{
+        width: 75%;
+    }
+}
+@media (max-width:1005px){
+    .container{
+        width: 80%;
+    }
+}
+@media (max-width:940px){
+    .container{
+        width: 85%;
+    }
+}
+@media (max-width:880px){
+    .container{
+        width: 90%;
+    }
+}
+@media (max-width:830px){
+    .container{
+        width: 95%;
+    }
+}
+@media (max-width: 780px) and (min-width: 750px){
+    .container{
+        width: 100%;
     }
 }
 
-@media (max-width:680px) {
+@media (max-width:749px) {
     .container{
         min-height: 100vh;
         width: 90%;

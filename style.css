@@ -119,12 +119,12 @@ input:focus{
 }
 .description{
     position: absolute;
-    top: 140px;
+    top: 160px;
     left: 293px;
 }
 .feels-like{
     position: absolute;
-    top: 140px;
+    top: 160px;
     left: 80px;
 }
 .sunrise{
